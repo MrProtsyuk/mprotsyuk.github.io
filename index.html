@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Mark Protsyuk</h1>
+      <button class="toggle-btn" onclick="toggleDarkMode()">
+        Toggle Dark Mode
+      </button>
+    </header>
+
+    <section class="hero">
+      <h2>Welcome to My Online Portfolio</h2>
+      <p>
+        I’m a passionate developer focused on building clean, functional, and
+        modern web experiences.
+      </p>
+    </section>
+
+    <section class="projects">
+      <div class="project-card">
+        <h3>Project One</h3>
+        <p>
+          A brief description of the project and what technologies were used.
+        </p>
+      </div>
+      <div class="project-card">
+        <h3>Project Two</h3>
+        <p>
+          Another awesome project you worked on. Keep it simple and engaging.
+        </p>
+      </div>
+      <div class="project-card">
+        <h3>Project Three</h3>
+        <p>
+          Describe what makes this project stand out. Try to tie it to your
+          skills.
+        </p>
+      </div>
+    </section>
+
+    <footer>&copy; 2025 Mark Protsyuk. All rights reserved.</footer>
+
+    <script>
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+    </script>
+  </body>
+</html>
