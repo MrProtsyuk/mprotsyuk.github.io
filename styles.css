@@ -5,7 +5,7 @@
 
   --bg-dark: #121212;
   --text-dark: #ffffff;
-  --accent-dark: #a8ff60;
+  --accent-dark: #80da36;
 }
 
 * {
@@ -26,12 +26,30 @@ body.dark-mode {
   color: var(--text-dark);
 }
 
+body.dark-mode header {
+  outline: 1px solid rgba(255, 255, 255, 0.5); /* Slight white outline */
+}
+
 header {
+  position: relative;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: inherit;
+  z-index: 1;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.05); /* Adjust opacity as needed */
+  z-index: -1;
+  pointer-events: none;
 }
 
 header h1 {
@@ -56,23 +74,25 @@ header h1 {
 
 .hero {
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 3rem 2rem;
   animation: fadeIn 1.2s ease-in-out;
 }
 
 .hero h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 section.projects {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
@@ -84,6 +104,7 @@ section.projects {
   background-color: #ffffff;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s;
+  cursor: pointer;
 }
 
 .dark-mode .project-card {
@@ -101,6 +122,37 @@ section.projects {
 
 .project-card p {
   font-size: 0.95rem;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.social-icons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  transition: color 0.3s;
+}
+
+.dark-mode .social-icons a {
+  color: var(--text-dark);
+}
+
+.social-icons a:hover {
+  color: var(--primary-light);
+}
+
+.dark-mode .social-icons a:hover {
+  color: var(--accent-dark);
 }
 
 footer {
